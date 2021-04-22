@@ -6,7 +6,7 @@ namespace Bolado.QueryBuilder.Data
 {
     public static class Mapper
     {
-        public static IList<User> ToUsers(IEnumerable<UserDto> dtos)
+        public static IList<User> ToUsers(IEnumerable<UserWithPhonesDto> dtos)
         {
             return dtos.GroupBy(dto => dto.UserId).Select(g => g.First())
                 .Select(dto =>
